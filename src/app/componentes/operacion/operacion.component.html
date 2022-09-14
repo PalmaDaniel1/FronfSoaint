@@ -1,0 +1,55 @@
+<div class="registrar">
+    <form class="custom-form" method="post">
+      <h1>Registrar</h1>
+      <input
+        type="id"
+        [(ngModel)]="id"    
+        name="id"
+        placeholder="Id"
+        required="required"
+      />
+      <input
+        type="numero_1"
+        [(ngModel)]="numero_1"
+        name="numero_1"
+        placeholder="numero_1"
+        required="required"
+      />
+      <input
+        type="numero_2"
+        [(ngModel)]="numero_2"
+        name="numero_2"
+        placeholder="numero_2"
+        required="required"
+      />
+      <input
+        type="operacion"
+        [(ngModel)]="operacion"
+        name="operacion"
+        placeholder="Operacion"
+        required="required"
+      />
+      <button type="submit" (click)="Registrar()">Realizar Operación</button>
+
+      <ng-container *ngIf="__response">
+        <table class="custom-form" >
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Resultado</th>
+
+                </tr>
+            </thead>
+            <tbody >
+                <tr >
+                    <td>{{ __response.id }}</td>
+                    <td>{{ __response.resultado}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    
+    </ng-container>
+
+    </form>
+  </div>
